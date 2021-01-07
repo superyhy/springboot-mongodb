@@ -16,4 +16,6 @@ public interface DemoDAO {
     DemoEntity findDemoByName(String name);
 
     List<DemoEntity> getDemoList();
+
+     void getMongoData();
 }

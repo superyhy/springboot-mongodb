@@ -2,6 +2,7 @@ package com.yhy.mongodb.dao.impl;
 
 import com.yhy.mongodb.dao.DemoDAO;
 import com.yhy.mongodb.entity.DemoEntity;
+import com.yhy.mongodb.entity.MongoDataMap;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -11,7 +12,9 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Component
@@ -80,5 +83,12 @@ public class DemoDAOImpl implements DemoDAO {
         Query query = new Query(Criteria.where("name").is(name));
         DemoEntity demoEntity = mongoTemplate.findOne(query, DemoEntity.class);
         return demoEntity;
+    }
+
+    @Override
+    public void getMongoData() {
+        Query query = new Query(Criteria.where("docId").is("1b9bf7c11a1e4c5eb4e08158750ad007"));
+        List<MongoDataMap> mongoData = mongoTemplate.find(query, MongoDataMap.class, "form_data");
+        System.out.println(mongoData);
     }
 }

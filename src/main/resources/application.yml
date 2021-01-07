@@ -1,4 +1,11 @@
+server:
+  port: 8082
 spring:
   data:
     mongodb:
-      uri: mongodb://10.19.146.20:27017/study
+      host: 10.19.151.197
+      port: 27017
+      authentication-database: admin
+      database: saas_qrcode
+      username: bocom
+      password: Bocom_123

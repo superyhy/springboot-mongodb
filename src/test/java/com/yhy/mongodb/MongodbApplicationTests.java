@@ -17,7 +17,7 @@ class MongodbApplicationTests {
     @Test
     void addDemoTest() {
         DemoEntity demoEntity = new DemoEntity();
-        demoEntity.setName("mongodb第5条数据");
+        demoEntity.setName("曼达洛人");
         demoEntity.setPassword("this is the way");
         demoDAO.addDemo(demoEntity);
     }
